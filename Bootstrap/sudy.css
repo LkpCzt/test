@@ -1,0 +1,55 @@
+body{
+	font-family:"Times New Roman Heiti SC";
+	/*font-family:"Songti SC";*/
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
+	margin:0;
+	padding:0;
+}
+.navbar-wrapper{
+	height: 126px;
+	background-color: rgb(224, 224, 224);
+}
+.nav-top{
+	background-color: #1f1f1f;
+	height: 30px;
+}
+.p-top{
+	color: white;
+}
+/*文字横线*/
+.linearGradientToR {
+	/*height: 200px;*/
+	background: -webkit-linear-gradient(left, rgba(251, 251, 251, 0.09),rgba(251, 251, 251, 1),#DCDCDC); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(right, rgba(251, 251, 251, 0.09),rgba(251, 251, 251, 0.59) ,#DCDCDC); /* Opera 11.1 - 12.0 */
+	background: -moz-linear-gradient(right,rgba(251, 251, 251, 0.09),rgba(251, 251, 251, 0.59) ,#DCDCDC); /* Firefox 3.6 - 15 */
+	/* 标准的语法（必须放在最后） */
+	background-image: linear-gradient(to right, rgba(251, 251, 251, 0.09), rgba(251, 251, 251, 0.59), #DCDCDC);
+	height: 1px;
+	    /*线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向径向渐变（Radial Gradients）- 由它们的中心定义*/
+	}
+.linearGradientToL{
+	/*height: 200px;*/
+	/* Safari 5.1 - 6.0 */
+	background-image: -webkit-linear-gradient(right, rgba(251, 251, 251, 0.09), rgba(251, 251, 251, 1), #DCDCDC);
+	background: -o-linear-gradient(left, rgba(251, 251, 251, 0.09),rgba(251, 251, 251, 0.59) ,#DCDCDC); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(left,rgba(251, 251, 251, 0.09),rgba(251, 251, 251, 0.59) ,#DCDCDC); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to left, rgba(251, 251, 251, 0.09),rgba(251, 251, 251, 0.59),#DCDCDC); /* 标准的语法（必须放在最后） */
+    height: 1px;
+    /*线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向径向渐变（Radial Gradients）- 由它们的中心定义*/
+	}
+/*垂直竖线*/
+.vlinearGradient{
+	float: right;
+	display: block;
+	width: 1px;
+	/*height: 100px;*/
+	height:100%;
+	background: -webkit-linear-gradient(white, gray, white);
+	background: -moz-linear-gradient(white, gray, white);
+	background: linear-gradient(white, gray, white);
+}
+.customLi{
+	display: inline;
+	margin-right: 40px;
+}

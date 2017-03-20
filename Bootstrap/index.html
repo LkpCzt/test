@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航条</title>
+	<style type="text/css" media="screen">
+		#login_frame .with-line {
+			width:300px;font-size: 16px;
+			color: #999;
+			margin: 0 auto;
+			position: relative;
+			text-align: center
+		}
+
+		#login_frame .with-line:before {
+			content: "";
+			border-top: 1px solid #ededed;
+			display: block;
+			position: absolute;
+			width: 60px;
+			top: 10px;
+			left: 0
+		}
+
+		#login_frame .with-line:after {
+			content: "";
+			border-top: 1px solid #ededed;
+			display: block;
+			position: absolute;
+			width: 60px;
+			top: 10px;
+			right: 0
+		}
+		.border { 
+			list-style: none; 
+		}
+    	.border li {
+			float: left;
+			width: 100px;
+			height: 50px; 
+			background-color: green; 
+		}
+    	hr:before { 
+    		content: ""; 
+    		float: left; 
+    		display: block; 
+    		width: 100%; 
+    		height: 1px; 
+    		background:  -webkit-linear-gradient(white, red, white);
+    		background: -moz-linear-gradient(white, red, white);
+    		background:linear-gradient(white, red, white);
+			
+    	}
+	</style>
+</head>
+<body>
+	<div style="height: 100px;background-color: cyan;">
+		hello world
+	</div>
+	<div id="login_frame">
+		<div class="with-line">
+			<div>
+				<p style="margin: 0px">这里是中间的文字部分</p>
+				<p style="font-size: 10px; padding-top: 0px; margin: 0px;">123456</p>
+			</div>
+		</div>
+	</div>
+	<hr class="border">
+	
+</body>
+</html>

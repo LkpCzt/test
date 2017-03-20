@@ -1,0 +1,10 @@
+*{paddinf:0px;margin:0px;}
+
+.nav{
+	height: 100px;
+	background-color: cyan;
+}
+.navTop{
+	height: 30px;
+	background-color: black;
+}

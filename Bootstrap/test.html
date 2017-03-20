@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>测试</title>
+	<style>
+		.big{
+			height:200px;
+			width:200px;
+			border:black solid 1px;
+			position:absolute;
+			left:150px;
+
+
+		}
+		.small{
+			height:100px;
+			width:100px;
+			background-color:green;
+			position:relative;
+			left:100px;
+			top:100px;
+			margin-top:-50px;
+			margin-left:-50px;
+			border:black solid 1px;
+		}
+		.big2{
+			height:200px;
+			width:200px;
+			border:black solid 1px;
+			text-align:center;
+
+		}
+		.small2 {
+			height: 20px;
+			width: 20px;
+			background-color: green;
+			/*外面的div高度的一半*/
+			margin: 90px auto;
+			border: black solid 1px;
+		}
+
+		.parent {
+			width:800px;
+			height:500px;
+			border:2px solid #000;
+			position:relative;
+		}
+		.child {
+			float: left;
+			width:100px;
+			height:100px;
+			margin: auto;
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-color: red;
+		}
+	</style>
+	<script>
+        function subCenter(parent,left,right) {
+            var parentDiv = document.getElementById(parent);
+            var leftDiv = document.getElementById(left);
+            var rightDiv = document.getElementById(right);
+            leftDiv.style.marginTop = (parentDiv.clientHeight - leftDiv.clientHeight) / 2 +"px";
+            rightDiv.style.marginTop = (parentDiv.clientHeight - rightDiv.clientHeight) / 2 +"px";
+        }
+
+	</script>
+</head>
+<body>
+	<div id="parent" style="width: 300px;height: 300px; background-color: cyan;">
+
+		<div id="left" style="float:left;width: 33.3%;">
+			<img src="Icon-Small@3x.png" alt="" style="width: 100%;">
+		</div>
+
+		<div id="right" style="float:left;margin: 0 0 0 10px;width: 50%;">
+			<h3 style="text-align: left;">验证码</h3>
+			<p>这是一个验证码这是一个验证码这是一个验证码这是一个验证码这是一个验证码这是一个验证码，</p>
+		</div>
+
+
+	</div>
+
+<!-- 测试1-->
+	<!--<div class='big'>-->
+
+		<!--<div class='small'>box1</div>-->
+
+	<!--</div>-->
+
+<!--测试2-->
+	<!--<div class='big2'>-->
+
+	<!--<div class='small2'>box3</div>-->
+
+	<!--</div>-->
+<!-- 测试3-->
+	<div class="parent" onclick="subCenter('parent','left','right')">
+		<div class="child">
+			<img src="Icon-Small@3x.png" alt="" width="100%">
+		</div>
+	</div>
+</body>
+</html>
