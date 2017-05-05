@@ -12,44 +12,42 @@ body.move{
     font-family: "微软雅黑,宋体,PingFangSC-Light,'helvetica neue','hiragino sans gb',tahoma,'microsoft yahei ui','microsoft yahei',simsun,sans-serif"
  !important;
 }
-.header{
-    width: 1000px;
-    height: 64px;
-    position: relative;
+.horizontalCenter{
     margin: 0 auto;
+}
+.header{
+    width: 1058px;
+    height: 96px;
+    position: relative;
     z-index: 2;
     overflow: hidden;
 }
 .logo{
-	margin-top: 9px;
+	margin-top: 31px;
+    height: 39px;
 }
 .content{
 	background: url('../images/rzhuye.png') center top;
 	width:100%;
-    min-width: 1000px;
-	height: 602px;
-	margin:0 auto;;
+    min-width: 1058px;
+	height: 524px;
 }
 .main{
-    width: 1000px;
+    width: 1058px;
     height: 100%;
     margin: 0 auto;
 }
 .main-left{
     display: inline-block;
-    width: 600px;
     position: relative;
-    top: 180.5px;
+    top: 103px;
 }
-.main-left img{
-    width: 70%;
-}
+
 .main-right{
     float: right;
-    width: 400px;
+    width: 300px;
     height: 100%;
-    padding-top: 101px;
-    padding-left: 50px;
+    padding-top: 60px;
     box-sizing: border-box;
 }
 .mainbox{
@@ -57,6 +55,7 @@ body.move{
     height: 400px;
     border-radius: 10px;
     background-color: white;
+    box-shadow: 0px 0px 30px #AAAAAA;
 }
 .mbtitle{
     margin: 30px 0px;
@@ -101,58 +100,62 @@ body.move{
     margin-top: 6px;
     padding-left: 25px;
     font-weight: bold;
+    position: relative;
 }
-
-.mainbox form input{
-    -web-kit-appearance:none;
-    -moz-appearance: none;
-    width: 250px;
-    height: 40px;
-    border-radius:5px;
-    outline:0;
-    box-sizing: border-box;
-    padding-left: 20px;
+input{
+    outline:none;
+    border:0px;
+    padding: 0;
+}
+.baseinput{
+    width: 230px;
+    height: 14px;
     font-size: 14px;
-    border: 1px solid #e0e0e0;
+    padding: 13px 0;
+    padding-left: 20px; 
+    background-image: url('../images/bg.png');
+    background-position: -8px -217px;
     margin-bottom: 10px;
 }
-::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #6a6f77;
+.baseinputselector{
+    background-position: -8px -376px
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #6a6f77;
+#passworderror .baseinput{
+    background-position: -8px -164px;
+    width: 150px;
 }
-input::-webkit-input-placeholder{
-  color: #6a6f77;
-}
-.mainbox form div input{
+#passworderror .baseinput.baseinputselector{
+    background-position: -8px -323px;
     vertical-align: top;
-    width: 170px;
 }
-#graphicVerificationCode{
-    display: inline-block;
+#passworderror img{
     width: 70px;
     height: 40px;
-    border-radius: 5px;
-    border: 0;
-    background-color: #fa9414;
+    background-color: cyan;
     vertical-align: top;
     margin-left: 10px;
 }
-#passworderror{
-    display: none;
-}
-#loginbtn,#regisbtn{
-    padding: 0;
-    background-color: #0dbff0;
+#loginbtn.baseinput,#regisbtn.baseinput{
+    box-sizing: content-box;
+    width: 250px;
+    height: 20px;
     font-size: 16px;
     font-weight: bolder;
     color: white;
+    padding: 10px 0;
+    background-position: -8px -9px;
+    background-color: transparent;
+}
+.pormpt{
+    text-align: center;
+    font-size: 14px;
+    font-weight: normal;
 }
 .forgetPassword{
     text-decoration: none;
     display: inline-block;
     width: 250px;
+    font-weight: normal;
     font-size: 14px;
     margin: 0 auto;
     text-align: center;
@@ -162,32 +165,49 @@ input::-webkit-input-placeholder{
     text-decoration: underline;
     color: blue;
 }
-p .forgetPassword{
-    display: inline;
-    text-decoration: underline;
+.baseinput.vercode{
+    width: 130px;
+    background-position: -8px -111px;
+    vertical-align: top;
 }
-#regisfrom input:nth-child(2){
-    width: 150px;
+.baseinput.vercode.baseinputselector{
+    background-position: -8px -270px;
 }
-#regisfrom input:nth-child(3){
+.baseinput.getvercode{
     width: 90px;
-    padding: 0;
-    background-color: #f9b000;
-    border: 1px solid #eb9b00;
-    color: white;
+    height: 16px;
+    padding: 12px 0;
     margin-left: 10px;
+    background-position: -168px -111px;
+    box-sizing: content-box;
+    vertical-align: top;
+    color: white;
 }
 .footer{
-    width: 1000px;
-    height: 63px;
+    width: 1058px;
+    height: 96px;
     overflow: visible;
-    margin: 0 auto;
     color: #848585;
     position: relative;
     text-align: center;
     font-size: 14px;
 }
 .footer span{
-	height: 63px;
-	line-height: 63px;
+	display: inline-block;
+    margin-top: 44px;
+}
+.myplaceholder{
+    font-size: 14px;
+    font-weight: normal;
+    display: none;
+}
+#loginfrom .myplaceholder{
+    position: absolute;
+    top: 63px;
+    left: 45px;
+}
+#regisfrom .myplaceholder{
+    position: absolute;
+    top: 114px;
+    left: 45px;
 }

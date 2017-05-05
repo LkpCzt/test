@@ -24,32 +24,38 @@
 		<p class="prompt"></p>
 		<!-- 用户登录 -->
 		<form id="loginfrom" action="https://www.baidu.com" style="display: block;">
-			<input type="text" name="account" placeholder="请输入手机号码">
-			<input type="password" name="password" placeholder="请输入用户密码">
+			<input class="baseinput" type="text" name="account" placeholder="请输入手机号码">
+			<input class="baseinput" type="password" name="password" placeholder="请输入用户密码">
 			<div id="passworderror" >
-				<input type="text" name="verCode" placeholder="请输入图文验证码"><img id="graphicVerificationCode" src="images/zhengque.png" alt="">
+				<input class="baseinput" type="text" name="verCode" placeholder="请输入图文验证码"><img id="graphicVerificationCode" src="images/zhengque.png" alt="">
 			</div>
-			<input id="loginbtn" type="submit" value="登&nbsp;录">
+			<input class="baseinput" id="loginbtn" type="submit" value="登&nbsp;录">
 			<a class="forgetPassword" href="#">忘记密码?</a>
 		</form>
 		<!-- 用户注册 -->
 		<form id="regisfrom" action="https://www.baidu.com" style="display: none;">
-			<input type="text" name="account" placeholder="请输入手机号码">
-			<input type="text" name="verificationCode" placeholder="验证码"><input id="getVerificationCode" type="button" value="获取验证码">
-			<input type="password" name="password" placeholder="请输入用户密码">
-			<input id="regisbtn" type="submit" value="注&nbsp;册">
-			<p style="text-align: center;font-size: 14px;">注册即表示同意并遵从<a class="forgetPassword" href="#">平台协议</a></p>
+			<input class="baseinput" type="text" name="account" placeholder="请输入手机号码">
+			<input class="baseinput vercode" type="text" name="verificationCode" placeholder="验证码"><input class="baseinput getvercode" id="getVerificationCode" type="button" value="获取验证码">
+			<input class="baseinput" type="password" name="password" placeholder="请输入用户密码">
+			<input class="baseinput" id="regisbtn" type="submit" value="注&nbsp;册">
+			<p class="pormpt">注册即表示同意并遵从<a class="forgetPassword" href="#" style="width: 56px;">平台协议</a></p>
 			
 		</form>
 	</div>
+
 	<script>
+		function IsPC() {
+		    if (!(/Android|iPhone|SymbianOS|Windows Phone|webOS|iPad|iPod|BlackBerry/i.test(navigator.userAgent))) {
+		    	window.location.href = "login.html";
+			}
+		}
+		IsPC();
 		/**
          * 设置垂直居中
          */
         function fVericalAlignBody() {
             var nBodyHeight = 400;
             var nClientHeight = document.documentElement.clientHeight;
-            var nClientWidth = document.documentElement.nClientWidth;
             if (nClientHeight >= nBodyHeight + 2) {
                 var nDis = (nClientHeight - nBodyHeight) / 2;
                 document.body.style.paddingTop = nDis + 'px';
@@ -75,29 +81,21 @@
 			$(this).addClass('tabbtnselector');
 		});
 		$(function(){
-	        //找到文本框，并注册得到焦点事件
-	        $("input:text").focus(function(){
-	            //让当前得到焦点的文本框改变其背景色
-	            $(this).css("background","#f2f7ff");
-	            $(this).css('borderColor', '#b9d4ff');
-	        });
-	        $("input:password").focus(function(){
-	            //让当前得到焦点的文本框改变其背景色
-	            $(this).css("background","#f2f7ff");
-	            $(this).css('borderColor', '#b9d4ff');
-	        });
-	        //找到文本框，并注册失去焦点事件
-	        $("input:text").blur(function(){
-	            //让当前失去焦点的文本框背景色变为白色
-	            $(this).css("background","white");
-	            $(this).css('borderColor', '#e0e0e0');
-	        });
-	        $("input:password").blur(function(){
-	            //让当前失去焦点的文本框背景色变为白色
-	            $(this).css("background","white");
-	            $(this).css('borderColor', '#e0e0e0');
-	        });
-    	});
+        //找到文本框，并注册得到焦点事件
+        $("input:text").focus(function(){
+        	$(this).addClass('baseinputselector');
+        });
+        $("input:password").focus(function(){
+            $(this).addClass('baseinputselector');
+        });
+        //找到文本框，并注册失去焦点事件
+        $("input:text").blur(function(){
+        	$(this).removeClass('baseinputselector');
+        });
+        $("input:password").blur(function(){
+        	$(this).removeClass('baseinputselector');
+        });
+    });
     </script>
 </body>
 </html>

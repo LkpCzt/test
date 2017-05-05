@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>testPlaceholder</title>
+    <style>
+    .input-item {
+        position: relative;
+        margin: 10px;
+    }
+    
+    .pwd-place {
+        position: absolute;
+        top: 0;
+        left: 72px;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+    }
+    </style>
+</head>
+
+<body>
+    <form action="#">
+        <div class="input-item">
+            <label for="userName">用户名：</label>
+            <input class="username" id="userName" type="text" placeholder="请输入用户名">
+        </div>
+        <div class="input-item">
+            <label for="pwd">密码：</label>
+            <input class=" password" id="pwd" type="password" placeholder="请输入密码">
+            <span class="pwd-place"></span>
+        </div>
+    </form>
+    <script src="JS/jquery-1.9.1.js"></script>
+    
+    <script>
+    function placeholder(el) {
+
+        function isPlaceholer() {
+            var input = document.createElement("input");
+            return "placeholder" in input;
+        }
+
+        var $el = $(el);
+        if (isPlaceholer() == false && !('placeholder' in document.createElement('input'))) {
+
+            $('input[placeholder],textarea[placeholder]').each(function() {
+                var that = $(this),
+                    text = that.attr('placeholder');
+                if (that.val() === "") {
+                    if (that.attr("type") == "password") {
+                        $el.html("请输入密码");
+                    } else {
+                        that.val(text).addClass('placeholder');
+                    }
+                }
+                that.focus(function() {
+                        if ($el.html() == text) {
+                            $el.html("");
+                        }
+                        if (that.val() === text) {
+                            that.val("").removeClass('placeholder');
+
+                        }
+                    })
+                    .blur(function() {
+                        if (that.val() === "") {
+                            if (that.attr("type") == "password") {
+                                $el.html("请输入密码");
+
+                            } else {
+                                that.val(text).addClass('placeholder');
+                            }
+                        }
+                    })
+                    .closest('form').submit(function() {
+                        if (that.val() === text) {
+                            that.val('');
+                        }
+                    });
+            });
+        }
+    }
+    $(document).ready(function() {
+        placeholder(".pwd-place")
+    });
+    </script>
+</body>
+
+</html>
