@@ -1,10 +1,3 @@
-function IsPC() {
-    if (/Android|iPhone|SymbianOS|Windows Phone|webOS|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
-        window.location.href = "loginSmart.html";
-    }
-}
-IsPC();
-
 $(function() {
 	// 切换按钮
 	var currentseletor = '#loginfrom';
@@ -37,7 +30,7 @@ $(function() {
     $("input:password").blur(function() {
         $(this).removeClass('baseinputselector');
     });
-    
+
     /**
      * 设置垂直居中
      */
