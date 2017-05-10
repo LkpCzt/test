@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>html动画</title>
+    <style>
+    #change {
+    	width: 50px;
+        position: absolute;
+    }
+    #change:hover{
+        -webkit-animation: change 2s linear infinite;
+    }
+    
+    @-webkit-keyframes change {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        50% {
+            -webkit-transform: rotate(180deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+    /* 火狐 */
+    @-moz-keyframes change{
+		0% {
+            -moz-transform: rotate(0deg);
+        }
+        50% {
+            -moz-transform: rotate(180deg);
+        }
+        100% {
+            -moz-transform: rotate(360deg);
+        }
+    }
+	/* IE */
+	@-ms-keyframes change{
+		0% {
+            -ms-transform: rotate(0deg);
+        }
+        50% {
+            -ms-transform: rotate(180deg);
+        }
+        100% {
+            -ms-transform: rotate(360deg);
+        }
+	}
+	/* Opera浏览器不支持animation属性！！！ */
+
+    </style>
+</head>
+
+<body>
+    <div id="test">
+        <img src="images/123.png" id="change"> 
+    </div>
+    </div>
+</body>
+
+</html>
